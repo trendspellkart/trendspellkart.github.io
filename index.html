@@ -29,8 +29,23 @@ align-items:center;
 }
 
 .logo{
-font-size:28px;
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo-t{
+font-size:72px;
 font-weight:bold;
+line-height:1;
+color:white;
+}
+
+.logo-line{
+width:4px;
+height:90px;
+background:white;
+display:block;
 }
 .hero{
 background:linear-gradient(135deg,#0f172a,#2563eb);
@@ -156,7 +171,10 @@ transform:translateY(0);
 <body>
 
 <header>
-<div class="logo">Trendspellkart</div>
+<div class="logo">
+    <span class="logo-t">T</span>
+    <span class="logo-line"></span>
+</div>
 </header>
 
 <section class="hero">
