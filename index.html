@@ -234,6 +234,25 @@ font-size:24px;
 cursor:pointer;
 color:black;
 }
+  .forgot-password{
+text-align:right;
+font-size:14px;
+color:#2563eb;
+cursor:pointer;
+margin-bottom:10px;
+}
+
+.switch-form{
+text-align:center;
+margin-top:15px;
+font-size:14px;
+}
+
+.signup-link{
+color:#25D366;
+font-weight:bold;
+cursor:pointer;
+}
 
   @keyframes logoIntro {
 
@@ -270,17 +289,20 @@ transform:translateY(0);
 
     <span class="close-btn" onclick="closeLogin()">&times;</span>
 
-   <h2>Login / Signup</h2>
-
-<input type="text" placeholder="Full Name">
+   <h2>Login</h2>
 
 <input type="email" placeholder="Email">
 
 <input type="password" placeholder="Password">
 
+<p class="forgot-password">Forgot Password?</p>
+
 <button>Login</button>
 
-<button class="signup-btn">Sign Up</button>
+<p class="switch-form">
+Don't have an account?
+<span class="signup-link">Sign Up</span>
+</p>
   </div>
 </div>
 
