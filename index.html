@@ -289,19 +289,19 @@ transform:translateY(0);
 
     <span class="close-btn" onclick="closeLogin()">&times;</span>
 
-   <h2>Login</h2>
+  <h2 id="popupTitle">Login</h2>
 
 <input type="email" placeholder="Email">
 
 <input type="password" placeholder="Password">
-
+<input type="password" id="confirmPassword" placeholder="Confirm Password" style="display:none;">
 <p class="forgot-password">Forgot Password?</p>
 
 <button>Login</button>
 
 <p class="switch-form">
 Don't have an account?
-<span class="signup-link">Sign Up</span>
+<span class="signup-link" onclick="showSignup()">Sign Up</span>
 </p>
   </div>
 </div>
@@ -406,6 +406,30 @@ document.getElementById("loginPopup").style.display="block";
 
 function closeLogin(){
 document.getElementById("loginPopup").style.display="none";
+}function showSignup(){
+
+document.getElementById("popupTitle").innerText = "Sign Up";
+
+document.getElementById("confirmPassword").style.display = "block";
+
+document.querySelector(".forgot-password").style.display = "none";
+
+document.querySelector(".signup-link").innerText = "Login";
+
+document.querySelector(".signup-link").setAttribute("onclick","showLogin()");
+}
+
+function showLogin(){
+
+document.getElementById("popupTitle").innerText = "Login";
+
+document.getElementById("confirmPassword").style.display = "none";
+
+document.querySelector(".forgot-password").style.display = "block";
+
+document.querySelector(".signup-link").innerText = "Sign Up";
+
+document.querySelector(".signup-link").setAttribute("onclick","showSignup()");
 }
 </script>
 </body>
