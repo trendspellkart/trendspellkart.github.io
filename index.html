@@ -1,438 +1,212 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <link rel="icon" type="image/png" href="1000121467.png">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trendspellkart</title>
-
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
-}
-
-body{
-background:#f5f7fb;
-color:#222;
-}
-
-header{
-background:#0f172a;
-color:white;
-padding:20px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo{
-display:flex;
-align-items:center;
-gap:8px;
-
-border:2px solid white;
-border-radius:12px;
-
-padding:4px 10px;
-
-margin-left:-10px;
-margin-top:-6px;
-}
-
-.logo-t{
-font-size:22px;
-font-weight:bold;
-line-height:1;
-color:white;
-}
-
-.logo-line{
-width:2px;
-height:28px;
-background:white;
-display:block;
-}
-  .logo-s{
-font-size:22px;
-font-weight:bold;
-line-height:1;
-color:white;
-}
-  .header-icons{
-display:flex;
-align-items:center;
-gap:20px;
-font-size:28px;
-font-weight:bold;
-color:white;
-}
-.login-btn{
-font-size:16px;
-}
-.header-icons span{
-cursor:pointer;
-}
-.hero{
-background:linear-gradient(135deg,#0f172a,#2563eb);
-color:white;
-padding:80px 20px;
-text-align:center;
-}
-
-.hero h1{
-font-size:48px;
-margin-bottom:15px;
-}
-
-.hero p{
-font-size:20px;
-margin-bottom:25px;
-}
-
-.btn{
-background:#25D366;
-color:white;
-padding:14px 25px;
-border-radius:8px;
-text-decoration:none;
-font-weight:bold;
-}
-
-.section{
-padding:60px 8%;
-}
-
-.section h2{
-text-align:center;
-margin-bottom:30px;
-font-size:32px;
-}
-
-.categories{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-
-.card{
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 4px 15px rgba(0,0,0,.08);
-text-align:center;
-}
-
-.products{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.product{
-background:white;
-padding:20px;
-border-radius:12px;
-box-shadow:0 4px 15px rgba(0,0,0,.08);
-text-align:center;
-}
-
-.product img{
-width:100%;
-height:220px;
-object-fit:cover;
-border-radius:10px;
-}
-
-.price{
-font-size:22px;
-font-weight:bold;
-margin:10px 0;
-color:#2563eb;
-}
-
-footer{
-background:#0f172a;
-color:white;
-text-align:center;
-padding:30px;
-margin-top:40px;
-}
-
-.whatsapp{
-position:fixed;
-right:20px;
-bottom:20px;
-background:#25D366;
-color:white;
-padding:15px 20px;
-border-radius:50px;
-text-decoration:none;
-font-weight:bold;
-}
-
-@media(max-width:768px){
-.hero h1{
-font-size:34px;
-}
-.header-icons{
-gap:10px;
-font-size:12px;
-}}
-.popup{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
-z-index:9999;
-}
-
-.popup-content{
-background:white;
-width:320px;
-padding:25px;
-border-radius:10px;
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-}
-
-.popup-content h2{
-color:black;
-margin-bottom:15px;
-}
-
-.popup-content input{
-width:100%;
-padding:10px;
-margin-bottom:10px;
-}
-
-.popup-content button{
-width:100%;
-padding:10px;
-background:#0f172a;
-color:white;
-border:none;
-cursor:pointer;
-}
-  .signup-btn{
-margin-top:10px;
-background:#25D366;
-}
-
-.close-btn{
-float:right;
-font-size:24px;
-cursor:pointer;
-color:black;
-}
-  .forgot-password{
-text-align:right;
-font-size:14px;
-color:#2563eb;
-cursor:pointer;
-margin-bottom:10px;
-}
-
-.switch-form{
-text-align:center;
-margin-top:15px;
-font-size:14px;
-}
-
-.signup-link{
-color:#25D366;
-font-weight:bold;
-cursor:pointer;
-}
-
-  @keyframes logoIntro {
-
-0%{
-opacity:0;
-transform:translateY(-30px);
-}
-
-100%{
-opacity:1;
-transform:translateY(0);
-}
-
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trendspellkart</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+    body{background:#f4f7fb;color:#17202a}
+    header{position:sticky;top:0;z-index:10;background:#101828;color:white;box-shadow:0 4px 18px #0002}
+    .topbar{display:flex;align-items:center;gap:18px;padding:14px 5%}
+    .logo{font-size:26px;font-weight:800;color:#2ee6a6;white-space:nowrap}
+    .logo span{color:#ffd54a}
+    .search{flex:1;display:flex;background:white;border-radius:8px;overflow:hidden}
+    .search input{width:100%;border:0;padding:13px 15px;font-size:15px;outline:none}
+    .search button{border:0;background:#2ee6a6;padding:0 18px;font-weight:700;cursor:pointer}
+    .nav-actions{display:flex;gap:10px;align-items:center}
+    .nav-actions button{border:1px solid #ffffff33;background:#ffffff12;color:white;padding:10px 13px;border-radius:8px;cursor:pointer}
+    .cart-count{background:#ff4d6d;color:white;border-radius:20px;padding:2px 7px;font-size:12px}
+    .categories{display:flex;gap:14px;overflow:auto;padding:12px 5%;background:white;border-bottom:1px solid #e5e7eb}
+    .cat{min-width:100px;text-align:center;background:#eef6ff;border:1px solid #d8e9ff;padding:12px;border-radius:12px;cursor:pointer;font-weight:700}
+    .cat.active{background:#101828;color:white}
+    .hero{margin:22px 5%;min-height:260px;border-radius:18px;overflow:hidden;background:linear-gradient(120deg,#fff3b0,#b8fff0 45%,#ffe0e9);display:grid;grid-template-columns:1.1fr .9fr;align-items:center}
+    .hero-text{padding:38px}
+    .hero-text h1{font-size:42px;line-height:1.05;margin-bottom:12px}
+    .hero-text p{font-size:17px;color:#344054;margin-bottom:22px}
+    .hero-text button{border:0;background:#101828;color:white;padding:13px 20px;border-radius:10px;font-weight:800;cursor:pointer}
+    .hero-art{height:100%;display:grid;place-items:center;padding:22px}
+    .deal-box{width:100%;max-width:430px;background:white;border-radius:18px;padding:22px;box-shadow:0 18px 45px #0002}
+    .deal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .deal-item{background:#f5f7fb;border-radius:14px;padding:14px;text-align:center;font-size:42px}
+    .section-title{margin:28px 5% 14px;display:flex;justify-content:space-between;align-items:center}
+    .section-title h2{font-size:24px}
+    .section-title span{color:#667085;font-weight:700}
+    .products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:0 5% 35px}
+    .card{background:white;border-radius:14px;padding:15px;box-shadow:0 8px 22px #10182812;transition:.25s}
+    .card:hover{transform:translateY(-5px)}
+    .pic{height:150px;border-radius:12px;background:#eef2f7;display:grid;place-items:center;font-size:58px;margin-bottom:13px}
+    .badge{display:inline-block;background:#e8fff6;color:#047857;padding:5px 8px;border-radius:20px;font-size:12px;font-weight:800;margin-bottom:8px}
+    .card h3{font-size:16px;min-height:40px}
+    .rating{color:#f59e0b;margin:8px 0}
+    .price{font-size:20px;font-weight:900}
+    .old{color:#98a2b3;text-decoration:line-through;font-size:13px;margin-left:6px}
+    .card button{width:100%;margin-top:12px;border:0;background:#2ee6a6;color:#101828;padding:11px;border-radius:9px;font-weight:900;cursor:pointer}
+    .offers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:0 5% 35px}
+    .offer{background:#101828;color:white;border-radius:16px;padding:24px;min-height:130px}
+    .offer:nth-child(2){background:#ff6b6b}
+    .offer:nth-child(3){background:#2563eb}
+    footer{text-align:center;background:#101828;color:white;padding:24px;margin-top:25px}
+    .empty{display:none;margin:0 5% 35px;background:white;padding:25px;border-radius:14px;text-align:center;color:#667085}
+    @media(max-width:850px){
+      .topbar{flex-wrap:wrap}.search{order:3;flex-basis:100%}
+      .hero{grid-template-columns:1fr}.hero-text h1{font-size:32px}
+      .products{grid-template-columns:repeat(2,1fr)}.offers{grid-template-columns:1fr}
+    }
+    @media(max-width:520px){
+      .logo{font-size:22px}.nav-actions button{padding:9px}
+      .products{grid-template-columns:1fr}.hero-text{padding:26px}
+      .hero-text h1{font-size:28px}.deal-item{font-size:38px}
+    }
+  </style>
 </head>
-
 <body>
+  <header>
+    <div class="topbar">
+      <div class="logo">Trendspell<span>kart</span></div>
+      <div class="search">
+        <input id="searchInput" type="text" placeholder="Search mobiles, fashion, electronics and more..." />
+        <button onclick="searchProducts()">Search</button>
+      </div>
+      <div class="nav-actions">
+        <button>Login</button>
+        <button>Orders</button>
+        <button onclick="showCart()">Cart <span class="cart-count" id="cartCount">0</span></button>
+      </div>
+    </div>
+  </header>
 
-<header>
-<div class="logo">
-    <span class="logo-t">T</span>
-    <span class="logo-line"></span>
-  <span class="logo-s">S</span>
-</div>
-  <div class="header-icons">
-   <span class="login-btn" onclick="openLogin()">👤 LOGIN ▼</span>
-    <span>♡ 0</span>
-    <span>🛒</span>
-</div>
-</header>
-  <div id="loginPopup" class="popup">
-  <div class="popup-content">
-
-    <span class="close-btn" onclick="closeLogin()">&times;</span>
-
-  <h2 id="popupTitle">Login</h2>
-
-<input type="email" placeholder="Email">
-
-<input type="password" placeholder="Password">
-<input type="password" id="confirmPassword" placeholder="Confirm Password" style="display:none;">
-<p class="forgot-password">Forgot Password?</p>
-
-<button>Login</button>
-
-<p class="switch-form">
-Don't have an account?
-<span class="signup-link" onclick="showSignup()">Sign Up</span>
-</p>
+  <div class="categories" id="categories">
+    <div class="cat active" onclick="filterProducts('All',this)">For You</div>
+    <div class="cat" onclick="filterProducts('Fashion',this)">Fashion</div>
+    <div class="cat" onclick="filterProducts('Mobiles',this)">Mobiles</div>
+    <div class="cat" onclick="filterProducts('Electronics',this)">Electronics</div>
+    <div class="cat" onclick="filterProducts('Beauty',this)">Beauty</div>
+    <div class="cat" onclick="filterProducts('Home',this)">Home</div>
+    <div class="cat" onclick="filterProducts('Grocery',this)">Grocery</div>
+    <div class="cat" onclick="filterProducts('Sports',this)">Sports</div>
   </div>
-</div>
 
-<section class="hero">
-<h1>Welcome to Trendspellkart</h1>
-<p>Kitchen • Home Decor • General Store • Daily Essentials</p>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Smart Deals, Fresh Style, Fast Shopping</h1>
+      <p>Trendspellkart par daily essentials se lekar premium gadgets tak sab kuch ek naye shopping experience ke saath.</p>
+      <button onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Shop Deals</button>
+    </div>
+    <div class="hero-art">
+      <div class="deal-box">
+        <div class="deal-grid">
+          <div class="deal-item">📱</div>
+          <div class="deal-item">👟</div>
+          <div class="deal-item">🎧</div>
+          <div class="deal-item">🛋️</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<a class="btn"
-href="https://wa.me/918318426421">
-Order on WhatsApp
-</a>
-</section>
+  <div class="section-title">
+    <h2>Top Picks For You</h2>
+    <span id="resultText">Best deals today</span>
+  </div>
 
-<section class="section">
-<h2>Shop By Category</h2>
+  <div class="products" id="products"></div>
+  <div class="empty" id="empty">No products found. Try another search.</div>
 
-<div class="categories">
+  <div class="section-title">
+    <h2>Special Zones</h2>
+    <span>Limited time</span>
+  </div>
 
-<div class="card">
-<h3>Kitchen Products</h3>
-<p>Useful products for modern kitchens.</p>
-</div>
+  <section class="offers">
+    <div class="offer">
+      <h2>Mobile Mania</h2>
+      <p>New phones with exchange offers and instant discounts.</p>
+    </div>
+    <div class="offer">
+      <h2>Fashion Flash</h2>
+      <p>Sneakers, watches and outfits starting from amazing prices.</p>
+    </div>
+    <div class="offer">
+      <h2>Home Upgrade</h2>
+      <p>Furniture, decor and appliances for a smarter home.</p>
+    </div>
+  </section>
 
-<div class="card">
-<h3>Home Decor</h3>
-<p>Beautiful decorative items for your home.</p>
-</div>
+  <footer>
+    <p>© 2026 Trendspellkart | A fresh shopping experience</p>
+  </footer>
 
-<div class="card">
-<h3>General Store</h3>
-<p>Daily use products at affordable prices.</p>
-</div>
+  <script>
+    const products = [
+      {name:"Aero 5G Smartphone",cat:"Mobiles",icon:"📱",price:"₹14,999",old:"₹19,999",badge:"25% OFF"},
+      {name:"BassMax Wireless Earbuds",cat:"Electronics",icon:"🎧",price:"₹1,299",old:"₹2,499",badge:"Hot Deal"},
+      {name:"StreetFlex Sneakers",cat:"Fashion",icon:"👟",price:"₹899",old:"₹1,999",badge:"55% OFF"},
+      {name:"GlowCare Beauty Kit",cat:"Beauty",icon:"💄",price:"₹699",old:"₹1,199",badge:"New"},
+      {name:"Comfort Cotton T-Shirt",cat:"Fashion",icon:"👕",price:"₹399",old:"₹799",badge:"50% OFF"},
+      {name:"Smart LED Table Lamp",cat:"Home",icon:"💡",price:"₹799",old:"₹1,499",badge:"Trending"},
+      {name:"Daily Grocery Basket",cat:"Grocery",icon:"🛒",price:"₹499",old:"₹699",badge:"Save More"},
+      {name:"Pro Fitness Dumbbells",cat:"Sports",icon:"🏋️",price:"₹1,599",old:"₹2,499",badge:"Deal"},
+      {name:"Ultra HD Smart TV",cat:"Electronics",icon:"📺",price:"₹24,999",old:"₹34,999",badge:"Mega Sale"},
+      {name:"Premium Travel Backpack",cat:"Fashion",icon:"🎒",price:"₹999",old:"₹1,899",badge:"47% OFF"},
+      {name:"Mixer Grinder Pro",cat:"Home",icon:"⚙️",price:"₹2,199",old:"₹3,499",badge:"Kitchen Deal"},
+      {name:"Cricket Starter Kit",cat:"Sports",icon:"🏏",price:"₹1,299",old:"₹2,299",badge:"Sports Pick"}
+    ];
 
-<div class="card">
-<h3>Mixed Products</h3>
-<p>Trending products across categories.</p>
-</div>
+    let cart = 0;
+    let currentList = products;
 
-</div>
-</section>
+    function render(list){
+      const box = document.getElementById("products");
+      const empty = document.getElementById("empty");
+      box.innerHTML = "";
+      empty.style.display = list.length ? "none" : "block";
 
-<section class="section">
-<h2>Featured Products</h2>
+      list.forEach(item=>{
+        box.innerHTML += `
+          <div class="card">
+            <div class="pic">${item.icon}</div>
+            <span class="badge">${item.badge}</span>
+            <h3>${item.name}</h3>
+            <div class="rating">★ ★ ★ ★ ☆</div>
+            <div><span class="price">${item.price}</span><span class="old">${item.old}</span></div>
+            <button onclick="addToCart()">Add to Cart</button>
+          </div>
+        `;
+      });
+    }
 
-<div class="products">
+    function addToCart(){
+      cart++;
+      document.getElementById("cartCount").textContent = cart;
+    }
 
-<div class="product">
-<img src="https://via.placeholder.com/400x300">
-<h3>Product Name</h3>
-<div class="price">₹499</div>
-<a class="btn"
-href="https://wa.me/918318426421">
-Order Now
-</a>
-</div>
+    function showCart(){
+      alert("Your cart has " + cart + " item(s).");
+    }
 
-<div class="product">
-<img src="https://via.placeholder.com/400x300">
-<h3>Product Name</h3>
-<div class="price">₹699</div>
-<a class="btn"
-href="https://wa.me/918318426421">
-Order Now
-</a>
-</div>
+    function filterProducts(category, el){
+      document.querySelectorAll(".cat").forEach(c=>c.classList.remove("active"));
+      el.classList.add("active");
+      currentList = category === "All" ? products : products.filter(p=>p.cat === category);
+      document.getElementById("resultText").textContent = category === "All" ? "Best deals today" : category + " deals";
+      document.getElementById("searchInput").value = "";
+      render(currentList);
+    }
 
-<div class="product">
-<img src="https://via.placeholder.com/400x300">
-<h3>Product Name</h3>
-<div class="price">₹999</div>
-<a class="btn"
-href="https://wa.me/918318426421">
-Order Now
-</a>
-</div>
+    function searchProducts(){
+      const q = document.getElementById("searchInput").value.toLowerCase();
+      const list = products.filter(p => p.name.toLowerCase().includes(q) || p.cat.toLowerCase().includes(q));
+      document.getElementById("resultText").textContent = q ? "Search results" : "Best deals today";
+      render(list);
+    }
 
-</div>
-</section>
+    document.getElementById("searchInput").addEventListener("keyup", function(e){
+      if(e.key === "Enter") searchProducts();
+    });
 
-<section class="section">
-<h2>About Trendspellkart</h2>
-<p style="text-align:center;max-width:900px;margin:auto;">
-Trendspellkart brings quality kitchen products, home decor items and daily utility products at competitive prices. We focus on providing value, convenience and reliable customer service.
-</p>
-</section>
-
-<footer>
-<h3>Trendspellkart</h3>
-<p>Kitchen • Home Decor • General Store</p>
-<p>WhatsApp: 8318426421</p>
-</footer>
-
-<a class="whatsapp"
-href="https://wa.me/918318426421">
-WhatsApp
-</a>
-<script>
-function openLogin(){
-document.getElementById("loginPopup").style.display="block";
-}
-
-function closeLogin(){
-document.getElementById("loginPopup").style.display="none";
-}
-  function showSignup(){
-  
-
-document.getElementById("popupTitle").innerText = "Sign Up";
-
-document.getElementById("confirmPassword").style.display = "block";
-
-document.querySelector(".forgot-password").style.display = "none";
-document.querySelector("button").innerText = "Sign Up";
-document.querySelector(".signup-link").innerText = "Login";
-
-document.querySelector(".signup-link").setAttribute("onclick","showLogin()");
-}
-
-function showLogin(){
-
-document.getElementById("popupTitle").innerText = "Login";
-document.querySelector("button").innerText = "Login";
-document.getElementById("confirmPassword").style.display = "none";
-
-document.querySelector(".forgot-password").style.display = "block";
-
-document.querySelector(".signup-link").innerText = "Sign Up";
-
-document.querySelector(".signup-link").setAttribute("onclick","showSignup()");
-}
-</script>
+    render(products);
+  </script>
 </body>
 </html>
