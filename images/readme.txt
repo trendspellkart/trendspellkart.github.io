@@ -1,0 +1,1 @@
+Images for TrendSpellKart website
