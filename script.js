@@ -1,8 +1,6 @@
 // ==========================================
-// TrendSpellKart JavaScript v2.0
+// TrendSpellKart JavaScript v1.1
 // ==========================================
-
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -22,73 +20,41 @@ function initWebsite() {
 
 }
 
+// ---------------- SEARCH ----------------
+
 function setupSearch() {
 
     console.log("Search Ready");
 
 }
 
-function setupWishlist() {
+// ---------------- CART ----------------
 
-    console.log("Wishlist Ready");
-
-}
-
-// ===============================
-// CART SYSTEM
-// ===============================
+let cartCount = Number(localStorage.getItem("cartCount")) || 0;
 
 function setupCart() {
+
+    console.log("Cart Ready");
 
     updateCartCount();
 
     const buttons = document.querySelectorAll(".add-cart");
 
-    buttons.forEach((button) => {
+    buttons.forEach(button => {
 
         button.addEventListener("click", function () {
 
-            const card = this.closest(".product-card");
+            cartCount++;
 
-            const product = {
+            localStorage.setItem("cartCount", cartCount);
 
-                id: card.dataset.id,
+            updateCartCount();
 
-                name: card.dataset.name,
-
-                price: card.dataset.price,
-
-                image: card.dataset.image
-
-            };
-
-            addToCart(product);
+            alert("Product added to cart!");
 
         });
 
     });
-
-}
-
-function addToCart(product) {
-
-    const exists = cart.find(item => item.id === product.id);
-
-    if (!exists) {
-
-        cart.push(product);
-
-        localStorage.setItem("cart", JSON.stringify(cart));
-
-        updateCartCount();
-
-        alert(product.name + " added to cart!");
-
-    } else {
-
-        alert("Product already in cart.");
-
-    }
 
 }
 
@@ -98,8 +64,16 @@ function updateCartCount() {
 
     if (badge) {
 
-        badge.innerText = cart.length;
+        badge.textContent = cartCount;
 
     }
+
+}
+
+// ---------------- WISHLIST ----------------
+
+function setupWishlist() {
+
+    console.log("Wishlist Ready");
 
 }
