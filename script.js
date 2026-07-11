@@ -39,13 +39,12 @@ function setupCart() {
     updateCartCount();
 
     const buttons = document.querySelectorAll(".add-cart");
-console.log("Buttons Found:", buttons.length);
-console.log(buttons);
+
+
     buttons.forEach(button => {
 
         button.addEventListener("click", function () {
-
-            console.log("Button Clicked");
+            
 
             cartCount++;
 
