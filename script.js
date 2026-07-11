@@ -130,7 +130,8 @@ cartOverlay.addEventListener("click", function () {
     buttons.forEach(button => {
 
         button.addEventListener("click", function () {
-            
+
+            console.log("ADD TO CART CLICKED");
 
             cartCount++;
 
