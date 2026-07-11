@@ -2,6 +2,57 @@
 // TrendSpellKart JavaScript v1.1
 // ==========================================
 
+
+// ==========================================
+// Product Database
+// ==========================================
+
+const products = [
+{
+    id: 1,
+    sku: "TSK-ML-001",
+    name: "3D Moon Lamp",
+    brand: "TrendSpellKart",
+    category: "Home Decor",
+    price: 499,
+    oldPrice: 999,
+    stock: 25,
+    rating: 4.8,
+
+    image: "images/IMG_20260623_133343.jpg",
+
+    description: "Premium 3D Moon Lamp with touch control, USB rechargeable battery and 7 color lighting modes. Perfect for bedroom, living room, office and gifting.",
+
+    specifications: {
+        Material: "Plastic",
+        Lighting: "Fluorescent",
+        Rechargeable: "Yes",
+        Shape: "Round",
+        Battery: "USB Rechargeable",
+        Warranty: "No",
+        Size: "15 CM"
+    },
+
+    features: [
+        "3D Moon Surface Design",
+        "USB Rechargeable",
+        "Touch Sensor Control",
+        "7 Color Changing Modes",
+        "Brightness Control",
+        "Memory Function",
+        "4-20 Hours Battery Backup",
+        "Wooden Stand Included",
+        "Perfect Gift Item"
+    ],
+
+    package: [
+        "1 x Moon Lamp",
+        "1 x USB Charging Cable",
+        "1 x Wooden Stand",
+        "1 x User Manual"
+    ]
+}
+];
 document.addEventListener("DOMContentLoaded", function () {
 
     console.log("TrendSpellKart Loaded Successfully");
@@ -13,7 +64,8 @@ document.addEventListener("DOMContentLoaded", function () {
 function initWebsite() {
 
     console.log("Website Ready");
-
+    
+    
     setupSearch();
     setupCart();
     setupWishlist();
